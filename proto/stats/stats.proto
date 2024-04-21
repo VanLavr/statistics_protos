@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package stats;
+
+option go_package = "github.com/VanLavr/statistics_protos";
+
+service Statistics {
+    rpc CalculateStatistics(User) returns (StatisticsForUser);
+}
+
+message User {
+    string username = 1;
+    string epal = 2;
+    string uuid = 3;
+}
+
+message StatisticsForUser {
+    int32 result = 1;
+}
