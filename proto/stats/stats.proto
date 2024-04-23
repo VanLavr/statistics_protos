@@ -11,7 +11,7 @@ service Statistics {
 message User {
     string username = 1;
     string epal = 2;
-    string uuid = 3;
+    string password = 3;
 }
 
 message StatisticsForUser {
