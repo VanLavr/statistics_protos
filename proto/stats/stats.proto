@@ -6,6 +6,9 @@ option go_package = "github.com/VanLavr/statistics_protos";
 
 service Statistics {
     rpc CalculateStatistics(User) returns (StatisticsForUser);
+    rpc CalculateAverageStatistics(stream User) returns (AvgStat);
+    rpc GenerateNumbers(Limit) returns (stream Number);
+    rpc CalculateBunchOfStatistics(stream User) returns (stream StatisticsForUser);
 }
 
 message User {
@@ -16,4 +19,16 @@ message User {
 
 message StatisticsForUser {
     int32 result = 1;
+}
+
+message AvgStat {
+    int32 result = 1;
+}
+
+message Limit {
+    int32 lim = 1;
+}
+
+message Number {
+    int32 num = 1;
 }
